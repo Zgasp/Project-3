@@ -12,6 +12,39 @@
     <link rel="stylesheet" type="text/css" href="style/reset.css">
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
+
+    <script type="text/javascript">
+      var timer = 5; //number often in seconds to rotate
+      var counter = 0; //start the counter at 0
+      var ns6 = document.getElementById&&!document.all; //detect netscape 6
+
+      // place your images, text, etc in the array elements here
+      var pics = new Array();
+          pics[0]="<a href='images/richcat.jpg' ><img src='images/richcat.jpg' alt='Rich cat image'/></a><p>Wealthy Cat</p>"; //Wealthy Cat
+          pics[1]="<a href='images/businesscat.jpg'><img src='images/businesscat.jpg' alt='Business cat image'></a><p>Business Cat</p>"; //Business Cat
+          pics[2]="<a href='images/surgeoncat.jpg'><img src='images/surgeoncat.jpg' alt='Surgeon cat'></a><p>Surgeon Cat</p>"; //Surgeon Cat
+          pics[3]="<a href='images/teachercat.jpg'><img src='images/teachercat.jpg' alt='Cats teaching image'></a><p>Tutor Cats</p>"; //Tutor Cats
+          //pics[4]=""; //
+          //pics[5]=""; //
+      function rotater() {
+        document.getElementById("placeholder").innerHTML = pics[counter];
+        counter = (counter==pics.length-1) ? 0 : counter + 1;
+        setTimeout("rotater()",timer*1000);
+      }
+
+      function rotater() {
+        if(document.layers) {
+            document.placeholderlayer.document.write(pics[counter]);
+            document.placeholderlayer.document.close();
+        }
+        if(ns6)document.getElementById("placeholderdiv").innerHTML=pics[counter]
+          if(document.all)
+            placeholderdiv.innerHTML=pics[counter];
+          counter = (counter==pics.length-1) ? 0 : counter + 1; //increment or reset
+          setTimeout("rotater()",timer*1000);
+        }
+        window.onload=rotater;
+    </script>
   </head>
 
   <body>
@@ -26,41 +59,6 @@
           </ul>
         </nav>
       </div>
-
-      <script type="text/javascript">
-        var timer = 5; //number often in seconds to rotate
-        var counter = 0; //start the counter at 0
-        var ns6 = document.getElementById&&!document.all; //detect netscape 6
-
-        // place your images, text, etc in the array elements here
-        var pics = new Array();
-            pics[0]="<a href='images/richcat.jpg' ><img src='images/richcat.jpg' alt='Rich cat image'/></a><p>Wealthy Cat</p>"; //Wealthy Cat
-            pics[1]="<a href='images/businesscat.jpg'><img src='images/businesscat.jpg' alt='Business cat image'></a><p>Business Cat</p>"; //Business Cat
-            pics[2]="<a href='images/surgeoncat.jpg'><img src='images/surgeoncat.jpg' alt='Surgeon cat'></a><p>Surgeon Cat</p>"; //Surgeon Cat
-            pics[3]="<a href='images/teachercat.jpg'><img src='images/teachercat.jpg' alt='Cats teaching image'></a><p>Tutor Cats</p>"; //Tutor Cats
-            //pics[4]=""; //
-            //pics[5]=""; //
-        function rotater() {
-            document.getElementById("placeholder").innerHTML = pics[counter];
-            counter = (counter==pics.length-1) ? 0 : counter + 1;
-            setTimeout("rotater()",timer*1000);
-        }
-
-        function rotater() {
-            if(document.layers) {
-                document.placeholderlayer.document.write(pics[counter]);
-                document.placeholderlayer.document.close();
-            }
-            if(ns6)document.getElementById("placeholderdiv").innerHTML=pics[counter]
-                if(document.all)
-                    placeholderdiv.innerHTML=pics[counter];
-
-            counter = (counter==pics.length-1) ? 0 : counter + 1; //increment or reset
-            setTimeout("rotater()",timer*1000);
-        }
-        window.onload=rotater;
-        //-->
-      </script>
     </header>
 
 
