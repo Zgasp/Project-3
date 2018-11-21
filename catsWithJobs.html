@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="style/style.css">
     <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
 
-    <script type="text/javascript">
+    <script>
       var timer = 5; //number often in seconds to rotate
       var counter = 0; //start the counter at 0
       var ns6 = document.getElementById&&!document.all; //detect netscape 6
@@ -24,7 +24,7 @@
           pics[1]="<a href='images/businesscat.jpg'><img src='images/businesscat.jpg' alt='Business cat image'></a><p>Business Cat</p>"; //Business Cat
           pics[2]="<a href='images/surgeoncat.jpg'><img src='images/surgeoncat.jpg' alt='Surgeon cat'></a><p>Surgeon Cat</p>"; //Surgeon Cat
           pics[3]="<a href='images/teachercat.jpg'><img src='images/teachercat.jpg' alt='Cats teaching image'></a><p>Tutor Cats</p>"; //Tutor Cats
-          //pics[4]=""; //
+          //pics[4]=""; // Might add more pics later
           //pics[5]=""; //
       function rotater() {
         document.getElementById("placeholder").innerHTML = pics[counter];
@@ -67,7 +67,8 @@
     </div>
     <div class="container"> <!-- Images -->
       <div class="box">
-        <layer id="placeholderlayer"></layer><div id="placeholderdiv"></div>
+        <div id="placeholderlayer"></div>
+        <div id="placeholderdiv"></div>
       </div>
     </div> <!-- Images -->
     <div class="box"> <!-- Video (iframe) -->
