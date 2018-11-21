@@ -26,36 +26,50 @@
           </ul>
         </nav>
       </div>
+
+      <script type="text/javascript">
+        var timer = 5; //number often in seconds to rotate
+        var counter = 0; //start the counter at 0
+        var ns6 = document.getElementById&&!document.all; //detect netscape 6
+
+        // place your images, text, etc in the array elements here
+        var pics = new Array();
+            pics[0]="<a href='images/richcat.jpg' ><img src='images/richcat.jpg' alt='Rich cat image'/></a><p>Wealthy Cat</p>"; //Wealthy Cat
+            pics[1]="<a href='images/businesscat.jpg'><img src='images/businesscat.jpg' alt='Business cat image'></a><p>Business Cat</p>"; //Business Cat
+            pics[2]="<a href='images/surgeoncat.jpg'><img src='images/surgeoncat.jpg' alt='Surgeon cat'></a><p>Surgeon Cat</p>"; //Surgeon Cat
+            pics[3]="<a href='images/teachercat.jpg'><img src='images/teachercat.jpg' alt='Cats teaching image'></a><p>Tutor Cats</p>"; //Tutor Cats
+            //pics[4]=""; //
+            //pics[5]=""; //
+        function rotater() {
+            document.getElementById("placeholder").innerHTML = pics[counter];
+            counter = (counter==pics.length-1) ? 0 : counter + 1;
+            setTimeout("rotater()",timer*1000);
+        }
+
+        function rotater() {
+            if(document.layers) {
+                document.placeholderlayer.document.write(pics[counter]);
+                document.placeholderlayer.document.close();
+            }
+            if(ns6)document.getElementById("placeholderdiv").innerHTML=pics[counter]
+                if(document.all)
+                    placeholderdiv.innerHTML=pics[counter];
+
+            counter = (counter==pics.length-1) ? 0 : counter + 1; //increment or reset
+            setTimeout("rotater()",timer*1000);
+        }
+        window.onload=rotater;
+        //-->
+      </script>
     </header>
+
 
     <div class="blurb">
       <p>I like cats a lot. I also know that's there are very few people who <i>don't</i> like cats. That's why I'm here to share some love.</p>
     </div>
     <div class="container"> <!-- Images -->
-      <!-- IMAGES -->
       <div class="box">
-        <a href="images/richcat.jpg">
-          <img src="images/richcat.jpg" alt="Rich cat image">
-        </a>
-        <p>Wealthy Cat</p>
-      </div>
-      <div class="box">
-        <a href="images/businesscat.jpg">
-          <img src="images/businesscat.jpg" alt="Business cat image">
-        </a>
-        <p>Business Cat</p>
-      </div>
-      <div class="box">
-        <a href="images/surgeoncat.jpg">
-          <img src="images/surgeoncat.jpg" alt="Surgeon cat">
-        </a>
-        <p>Surgeon Cat</p>
-      </div>
-      <div class="box">
-        <a href="images/teachercat.jpg">
-          <img src="images/teachercat.jpg" alt="Cats teaching image">
-        </a>
-        <p>Tutor Cats</p>
+        <layer id="placeholderlayer"></layer><div id="placeholderdiv"></div>
       </div>
     </div> <!-- Images -->
     <div class="box"> <!-- Video (iframe) -->
