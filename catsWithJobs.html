@@ -20,12 +20,12 @@
 
       // place your images, text, etc in the array elements here
       var pics = new Array();
-          pics[0]="<a href='images/richcat.jpg' ><img src='images/richcat.jpg' alt='Rich cat image'/></a><p>Wealthy Cat</p>"; //Wealthy Cat
-          pics[1]="<a href='images/businesscat.jpg'><img src='images/businesscat.jpg' alt='Business cat image'></a><p>Business Cat</p>"; //Business Cat
-          pics[2]="<a href='images/surgeoncat.jpg'><img src='images/surgeoncat.jpg' alt='Surgeon cat'></a><p>Surgeon Cat</p>"; //Surgeon Cat
-          pics[3]="<a href='images/teachercat.jpg'><img src='images/teachercat.jpg' alt='Cats teaching image'></a><p>Tutor Cats</p>"; //Tutor Cats
-          pics[4]="<a href='images/securitycat.jpg'><img src='images/securitycat.jpg' alt='Security Cat image'></a><p>Security Cat</p>"; //Security Cat
-          //pics[5]=""; // Might add more pics later
+        pics[0]="<a href='images/richcat.jpg' ><img src='images/richcat.jpg' alt='Rich cat image'/></a><p>Wealthy Cat</p>"; //Wealthy Cat
+         pics[1]="<a href='images/businesscat.jpg'><img src='images/businesscat.jpg' alt='Business cat image'></a><p>Business Cat</p>"; //Business Cat
+         pics[2]="<a href='images/surgeoncat.jpg'><img src='images/surgeoncat.jpg' alt='Surgeon cat'></a><p>Surgeon Cat</p>"; //Surgeon Cat
+         pics[3]="<a href='images/teachercat.jpg'><img src='images/teachercat.jpg' alt='Cats teaching image'></a><p>Tutor Cats</p>"; //Tutor Cats
+         pics[4]="<a href='images/securitycat.jpg'><img src='images/securitycat.jpg' alt='Security Cat image'></a><p>Security Cat</p>"; //Security Cat
+         //pics[5]=""; // Might add more pics later
       function rotater() {
         document.getElementById("placeholder").innerHTML = pics[counter];
         counter = (counter==pics.length-1) ? 0 : counter + 1;
@@ -34,8 +34,8 @@
 
       function rotater() {
         if(document.layers) {
-            document.placeholderlayer.document.write(pics[counter]);
-            document.placeholderlayer.document.close();
+           document.placeholderlayer.document.write(pics[counter]);
+           document.placeholderlayer.document.close();
         }
         if(ns6)document.getElementById("placeholderdiv").innerHTML=pics[counter]
           if(document.all)
@@ -72,8 +72,8 @@
       </div>
     </div> <!-- Images -->
     <div class="box"> <!-- Video (iframe) -->
-        <iframe src="https://www.youtube.com/embed/SWav2HcFIbM?rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        <p>Mayor Cat</p>
+       <iframe src="https://www.youtube.com/embed/SWav2HcFIbM?rel=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <p>Mayor Cat</p>
     </div><!-- Video (iframe) -->
   </body>
 </html>
